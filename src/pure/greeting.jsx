@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // los proptypes es para tipar el dato que pasamos en props, es necesario en js pero en typescript no
 
 
 class Greeting extends Component {
@@ -29,7 +29,7 @@ class Greeting extends Component {
 
 
 Greeting.propTypes = {
-
+      name: PropTypes.string
 };
 
 
