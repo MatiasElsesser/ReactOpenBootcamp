@@ -1,0 +1,1 @@
+Los hooks son funciones que simplifican los mecanismos para trabajar con componentes funcionales
