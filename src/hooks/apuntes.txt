@@ -1,1 +1,46 @@
 Los hooks son funciones que simplifican los mecanismos para trabajar con componentes funcionales
+
+useState()
+      Sintaxis:
+            const [ state, setState ]= useState( initialState )
+            Devuelve un valor como estado y una funcion para actualizar ese estado
+            Durante el renderizado inicial, el estado devuelto ( state ) es el mismo que el valor pasado como primer argumento ( initialState ).
+      Es importante no olvidar de importar el hook   /// import React, { useState } from "react" ///
+
+      Ejemplo:
+            function Counter({initialCount}) {
+                  const [count, setCount] = useState(initialCount);
+                  return (
+                        <>
+                          Count: {count}
+                          <button onClick={() => setCount(initialCount)}>Reset</button>
+                          <button onClick={() => setCount(count => count - 1)}>-</button>
+                          <button onClick={() => setCount(count => count + 1)}>+</button>
+                        </>
+                  );
+            }
+/////////////////////////////////////////////////////
+
+
+useRef()
+      Sintaxis:
+            const refContainer = useRef(initialValue);
+            useRef() devuelve un objeto ref mutable cuya propiedad .current se inicializa con el argumento pasado (initialValue). El objeto devuelto se mantendrá persistente durante la vida completa del componente.
+            En esencia, useRef es como una “caja” que puedes mantener en una variable mutable en su propiedad .current.
+
+      Ejemplo:
+            function TextInputWithFocusButton() {
+                  const inputEl = useRef(null);  (( La constante inputEl almacena una referencia al DOM que no tiene valor inicial. ))
+                  const onButtonClick = () => {
+                        // `current` apunta al elemento de entrada de texto montado
+                        inputEl.current.focus();
+                  };
+                  return (
+                    <>
+                      <input ref={inputEl} type="text" />  (( Para poder enlazar nuestra referencia, por ejemplo, a un input, se usa la propiedad ref ))
+                      <button onClick={onButtonClick}>Focus the input</button>
+                    </>
+                   );
+            }
+            En sintesis, este hook sirve para anexarlo a un elemento del Dom y acceder a todas sus propiedades, como style, value, etc
+
