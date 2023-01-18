@@ -25,7 +25,6 @@ const Ejemplo2 = () => {
             setContador2(contador2 + 1);
       }
 
-
       // Trabajamos con useEffect
       /* ? Caso 1: Ejecutrar SIEMPRE un snippet de codigo ( Cada vez que haya un cambio en el estado del componente se ejecuta lo que este en el useEffect )
       */

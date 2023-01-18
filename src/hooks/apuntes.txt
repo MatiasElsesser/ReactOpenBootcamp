@@ -44,3 +44,33 @@ useRef()
             }
             En sintesis, este hook sirve para anexarlo a un elemento del Dom y acceder a todas sus propiedades, como style, value, etc
 
+/////////////////////////////////////////////////////
+
+useEffect()
+      Sintaxis:
+            useEffect( (  ) => {
+                  Cuerpo de la funcion que recibe 
+             }, [ Lista de parametros que depende el efecto ])   
+                  (( El segundo parametro recibe un array de elementos los cuales queramos que al modificarse se renderice el useEffect, tambien puede recibir un array vacio, para indicar que solo se active cuando el componente se monta ))
+            Como su nombre indica, este hook sirve para definir efectos
+            Sirve para darle una funcion que se ejecute en algun punto del ciclo de vida del componente
+            El hook useEffect en React equivale a una combinación de las funciones componentDidMount, componentDidUpdate y componentWillUnmount.
+            Con el hook useEffect podremos ejecutar código cada vez que nuestro componente se renderice (ya sea por una actualización o sea la primera vez).
+
+      Ejemplo:
+            function Example() {
+                  const [count, setCount] = useState(0);
+
+                  useEffect(() => {
+                    document.title = `You clicked ${count} times`; ((CADA VEZ QUE COUNT SE ACTUALIZA useEffect ACTUALIZA EL TITULO DE LA PAGINA))
+                  });
+
+                    return (
+                        <div>
+                              <p>You clicked {count} times</p>
+                              <button onClick={() => setCount(count + 1)}>
+                              Click me
+                              </button>
+                        </div>
+                  );
+            }

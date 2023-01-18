@@ -45,9 +45,6 @@ const Ejemplo1 = () => {
       }
 
 
-
-
-
       return (
             <div>
                   <h1> Ejemplo de useState()</h1>
