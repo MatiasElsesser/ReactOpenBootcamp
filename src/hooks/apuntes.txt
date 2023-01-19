@@ -74,3 +74,21 @@ useEffect()
                         </div>
                   );
             }
+
+/////////////////////////////////////////////////////////
+
+useContext()
+      Sintaxis:
+            Sirve como un atajo para pasar informacion entre elementos padre e hijo
+            El contexto crea un componente provider que almacena el dato y un componente consumer que accede a este dato desde el componente final. Este consumer puede ser tratado de dos maneras: con el contextconsumer en React o con el useContext en React.
+
+            Hay que crear un contexto con anterioridad
+            const MyContext = React.createContext ( );
+
+            import {createContext} from ‘react’;
+            const AuthContext = createContext ( )
+
+            <AuthContextProvider value = {{ isLogged, handleLogin, handleLogout}}>
+            
+            Supongamos que este componente es un botón que necesita el estado isLogged y la función handleLogout para funcionar, que se encuentran dentro del provider. Entonces, podemos insertar la siguiente línea de código directamente dentro del componente botón
+            const value = useContext (AuthContext)
